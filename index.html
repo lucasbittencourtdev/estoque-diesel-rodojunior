@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+
+    <title>Estoque de Diesel</title>
+</head>
+
+<body>
+    <main class="container">
+        <img src="/assets/rodojunior.jpg" alt="Rodojunior.Logo">
+        <div class="box">
+            <h1>Estoque Atual de Diesel</h1>
+
+            <div class="valor">
+                <h2 id="resultado">Carregando...</h2>
+            </div>
+
+            <button class="button-att" type="button">Atualizar</button>
+        </div>
+
+
+    </main>
+
+    <script>
+    async function carregar() {
+        try {
+            const response = await fetch("http://10.1.1.219:5000/api/estoquediesel");
+            const texto = await response.text();
+
+            const match = texto.match(/(\d+(?:[.,]\d+)?)/);
+
+            let numero = match ? match[1].replace(",", ".") + " L" : "Não encontrado";
+
+            document.getElementById("resultado").textContent = numero;
+        } catch (error) {
+            document.getElementById("resultado").textContent = "Erro ao carregar dados";
+            console.error("Erro:", error);
+        }
+    }
+
+    carregar();
+</script>
+
+    
+
+</body>
+
+</html>
