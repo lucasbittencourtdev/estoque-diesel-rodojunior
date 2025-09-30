@@ -55,6 +55,8 @@ body{
     border: none;
     border-radius: 10px;
     display: flex;
+    width: 150px;
+    justify-content: center;
     margin: auto;
     background-color: rgb(238, 191, 36);
 }
@@ -74,7 +76,7 @@ img{
 }
 
 #resultado{
-    padding: 0;
+    padding: 15px;
 }
 
 .icone-diesel{

@@ -16,12 +16,12 @@
         <div class="box">
             <h1>Estoque Atual de Diesel</h1>
 
-            <div class="valor">
+            <div class="valor" style="display: flex; align-items: center;">
                 <img height="" width="20" src="/assets/icone-diesel-amarelo.png" alt="icone diesel" class="icone-diesel">
-                <h2 id="resultado">Carregando</h2>
+                <h2 id="resultado"></h2>
             </div>
 
-            <button class="button-att" type="button" onclick="carregar()">
+            <button class="button-att" type="button" onclick="carregar()" id="botao">
                 Atualizar
             </button>
         </div>
@@ -32,6 +32,9 @@
     <script>
         async function carregar() {
             try {
+                document.getElementById("resultado").textContent = '------';
+                document.getElementById("botao").textContent = 'Carregando...';
+
                 const response = await fetch("http://10.1.1.219:5000/api/estoquediesel");
                 const texto = await response.text();
 
@@ -40,6 +43,8 @@
                 let numero = match ? match[1].replace(",", ".") + " L" : "Não encontrado";
 
                 document.getElementById("resultado").textContent = numero;
+                document.getElementById("botao").textContent = 'Atualizar';
+
             } catch (error) {
                 document.getElementById("resultado").textContent = "Erro ao carregar dados";
                 console.error("Erro:", error);
