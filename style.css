@@ -13,7 +13,8 @@ body{
     justify-content: center;
     align-items: center;
     width: 100vw;
-    height: 101vh;
+    height: 100vh;
+    flex-wrap: wrap;
 }
 
 .container{
@@ -21,6 +22,8 @@ body{
     font-size: 20px;
     align-items: center;
     justify-content: center;
+    width: 800px;
+    height: 700px;
     display: flex;
     flex-direction: column;
     border-radius: 20px;
@@ -42,8 +45,8 @@ body{
     align-items: center;
     justify-content: center;
     padding: 50px;
-      font-size:70px;
-    color: rgb(231, 231, 41);
+    font-size:70px;
+    color: rgb(238, 191, 36);
 }
 
 .button-att{
@@ -53,23 +56,29 @@ body{
     border-radius: 10px;
     display: flex;
     margin: auto;
-    background-color: rgb(231, 231, 41);
+    background-color: rgb(238, 191, 36);
 }
 
 .button-att:hover{
-        cursor: pointer;
-        background-color: transparent;
-        transition: 0.2s;
-        color: rgb(236, 236, 236);
-        border: 2px solid rgb(231, 231, 41);
+    cursor: pointer;
+    background-color: transparent;
+    transition: 0.2s;
+    color: rgb(236, 236, 236);
+    outline: 1px solid rgb(238, 191, 36);
 }
-
+    
 img{
-    height: 50px;
+    height: 90px;
     align-items: center;
     justify-content: center;
 }
 
 #resultado{
-    padding: 80px;
+    padding: 0;
+}
+
+.icone-diesel{
+    padding: 4px;
+    height: 40px;
+    width: 40px;
 }
